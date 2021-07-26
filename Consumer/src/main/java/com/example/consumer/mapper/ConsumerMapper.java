@@ -5,6 +5,8 @@ import com.example.consumer.entity.Consumer;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class ConsumerMapper {
@@ -18,5 +20,23 @@ public class ConsumerMapper {
         LocalDateTime createdAt = LocalDateTime.now();
         consumerDto.setCreatedAt(createdAt);
         return consumerDto;
+    }
+
+    public List<ConsumerDto> toListConsumersDto (List<Consumer> consumers) {
+        List<ConsumerDto> consumerDtos = new ArrayList<>();
+        for (Consumer consumer: consumers) {
+            ConsumerDto consumerDto = toConsumerDto(consumer);
+            consumerDtos.add(consumerDto);
+        }
+        return consumerDtos;
+    }
+
+    public Consumer toConsumer(ConsumerDto consumerDto) {
+        Consumer consumer = new Consumer();
+        consumer.setName(consumerDto.getName());
+        consumer.setAddress(consumerDto.getAddress());
+        consumer.setEmail(consumerDto.getEmail());
+        consumer.setPhone(consumerDto.getPhone());
+        return consumer;
     }
 }

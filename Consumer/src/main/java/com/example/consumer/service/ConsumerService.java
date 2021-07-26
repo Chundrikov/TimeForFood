@@ -6,7 +6,6 @@ import com.example.consumer.exception.ConsumerNotFoundException;
 import com.example.consumer.exception.NoDataFoundException;
 import com.example.consumer.mapper.ConsumerMapper;
 import com.example.consumer.repository.ConsumerRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -15,13 +14,17 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 @Service
-@AllArgsConstructor
 @Transactional
 public class ConsumerService {
 
     private ConsumerRepository repository;
 
     private ConsumerMapper mapper;
+
+    public ConsumerService(ConsumerRepository repository, ConsumerMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+    }
 
     public Long create(String name, String phone, String email, String address) {
         Consumer newConsumer = repository.save(new Consumer(name, phone, email, address));

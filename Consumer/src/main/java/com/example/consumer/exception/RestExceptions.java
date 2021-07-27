@@ -13,10 +13,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @ControllerAdvice
-public class RestExceptions extends ResponseEntityExceptionHandler implements ProblemHandling {
+public class RestExceptions {
 
     @ExceptionHandler(ConsumerNotFoundException.class)
-    protected ResponseEntity<Object> handleCustomerNotFound
+    protected ResponseEntity<Object> handleConsumerNotFound
             (ConsumerNotFoundException ex, WebRequest request) {
 
         Map<String, Object> body = new LinkedHashMap<>();

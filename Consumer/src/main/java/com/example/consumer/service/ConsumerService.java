@@ -31,7 +31,7 @@ public class ConsumerService {
         return newConsumer.getId();
     }
 
-    public ConsumerDto update(Long id, ConsumerDto consumerDto) {
+    public ConsumerDto update(ConsumerDto consumerDto, Long id) {
         Consumer updatedConsumer = repository.findById(id).orElseThrow(()
                 -> new ConsumerNotFoundException(id));
         updatedConsumer.setName(consumerDto.getName());
@@ -41,7 +41,6 @@ public class ConsumerService {
         repository.save(updatedConsumer);
 
         ConsumerDto newConsumerDto = mapper.toConsumerDto(updatedConsumer);
-        newConsumerDto.setModifiedAt(LocalDateTime.now());
         return newConsumerDto;
     }
 

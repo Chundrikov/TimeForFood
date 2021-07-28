@@ -36,10 +36,4 @@ public class ConsumerDto {
     @ApiModelProperty("Адрес клиента")
     @NotBlank(message = "Address is required")
     private String address;
-
-    @ApiModelProperty("Время создания учетной записи клиента")
-    private LocalDateTime createdAt;
-
-    @ApiModelProperty("Время изменения учетной записи клиента")
-    private LocalDateTime modifiedAt;
 }

@@ -57,7 +57,7 @@ public class ConsumerController {
     @ResponseBody
     public ResponseEntity<Long> updateConsumer(@Valid @RequestBody ConsumerDto consumerDto,
                                                @PathVariable Long id) {
-        return new ResponseEntity(service.update(id, consumerDto), HttpStatus.CREATED);
+        return new ResponseEntity(service.update(consumerDto, id), HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "Delete consumer by id",

@@ -15,6 +15,9 @@
     <description>Spring boot service for consumer food app</description>
     <properties>
         <java.version>11</java.version>
+        <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
+        <swagger-annotations.version>1.6.2</swagger-annotations.version>
+        <problem-spring-web.version>0.26.2</problem-spring-web.version>
     </properties>
     <dependencies>
 
@@ -49,9 +52,19 @@
             <artifactId>liquibase-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${springfox-boot-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-bean-validators</artifactId>
+            <version>${springfox-boot-starter.version}</version>
+        </dependency>
+        <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
-            <version>1.6.2</version>
+            <version>${swagger-annotations.version}</version>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -59,8 +72,8 @@
         </dependency>
         <dependency>
             <groupId>org.zalando</groupId>
-            <artifactId>problem-spring-web</artifactId>
-            <version>0.26.2</version>
+            <artifactId>problem-spring-web-starter</artifactId>
+            <version>${problem-spring-web.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.validation</groupId>

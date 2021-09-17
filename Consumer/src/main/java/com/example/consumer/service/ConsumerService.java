@@ -8,7 +8,6 @@ import com.example.consumer.mapper.ConsumerMapper;
 import com.example.consumer.repository.ConsumerRepository;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.transaction.Transactional;

@@ -1,7 +1,6 @@
 # TimeForFood
 
-Java app for ordering food in restaurants.
-####
+#### Java app for ordering food in restaurants
 
 Technologies: Java 11, CQRS,Kafka, Event Sourcing, Docker, Kubernetes
 

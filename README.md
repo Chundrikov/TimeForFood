@@ -2,7 +2,8 @@
 
 #### Java app for ordering food in restaurants
 
-Technologies: Java 11, CQRS,Kafka, Event Sourcing, Docker, Kubernetes
+####Technologies: 
+Java 11, CQRS,Kafka, Event Sourcing, Docker, Kubernetes
 
 About:
 There are several microservices that are divided by business tasks. Each service has its own database. 
